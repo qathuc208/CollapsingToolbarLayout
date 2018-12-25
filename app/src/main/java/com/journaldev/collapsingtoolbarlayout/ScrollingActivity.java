@@ -40,7 +40,7 @@ public class ScrollingActivity extends AppCompatActivity {
             }
         });
 
-        AppBarLayout mAppBarLayout = (AppBarLayout) findViewById(R.id.app_bar);
+        final AppBarLayout mAppBarLayout = (AppBarLayout) findViewById(R.id.app_bar);
         mAppBarLayout.addOnOffsetChangedListener(new AppBarLayout.OnOffsetChangedListener() {
             boolean isShow = false;
             int scrollRange = -1;
@@ -50,6 +50,9 @@ public class ScrollingActivity extends AppCompatActivity {
                 if (scrollRange == -1) {
                     Log.d("abc","11111");
                     scrollRange = appBarLayout.getTotalScrollRange();
+                    mAppBarLayout.setExpanded(false);
+                    //collapsingToolbarLayout.setTitleEnabled(false);
+                    //collapsingToolbarLayout.setTitle("Dau xanh rau ma");
                 }
                 if (scrollRange + verticalOffset == 0) {
                     Log.d("abc","2222222");
